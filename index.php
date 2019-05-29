@@ -280,8 +280,9 @@ $(document).ready(function() {
         var request = $.ajax({
             url: "http://localhost/~argenis/cloudbeds/interval/"+id,
 						method: 'PUT',
+						contentType: 'application/json',
             data: {price:price, start_date:start_date, end_date:end_date},
-            dataType: 'json'
+						dataType: 'json'
         });
 
         request.done(function(response) {
