@@ -210,7 +210,7 @@ $(document).ready(function() {
     });
 		
     editor = new $.fn.dataTable.Editor( {
-        "ajax": "http://localhost/~argenis/cloudbeds/interval",
+        "ajax": "http://cloudbeds.argenis.me/api/interval",
         "table": "#grid-data",
         "fields": [ 
 			{
@@ -230,7 +230,7 @@ $(document).ready(function() {
     } );
  
     $('#grid-data').DataTable( {
-        ajax: "http://localhost/~argenis/cloudbeds/interval",
+        ajax: "http://cloudbeds.argenis.me/api/interval",
         columns: [
 			{ data: "id" },
             { data: "price" },
@@ -255,7 +255,7 @@ $(document).ready(function() {
 		var end_date = $("#end_date").val();
     
         var request = $.ajax({
-            url: "http://localhost/~argenis/cloudbeds/interval",
+            url: "http://cloudbeds.argenis.me/api/interval",
             method: 'POST',
             data: {price:price, start_date:start_date, end_date:end_date},
             dataType: 'json'
@@ -278,7 +278,7 @@ $(document).ready(function() {
 		var end_date = $("#modal_end_date").val();
     
         var request = $.ajax({
-            url: "http://localhost/~argenis/cloudbeds/interval/"+id,
+            url: "http://cloudbeds.argenis.me/api/interval/"+id,
 						method: 'PUT',
 						contentType: 'application/json',
             data: {price:price, start_date:start_date, end_date:end_date},
@@ -299,7 +299,7 @@ $(document).ready(function() {
 		var id = $("#modal_delete_id").val();
     
         var request = $.ajax({
-            url: "http://localhost/~argenis/cloudbeds/interval/"+id,
+            url: "http://cloudbeds.argenis.me/api/interval/"+id,
 						method: 'DELETE',
 						headers: {
             'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
@@ -347,7 +347,7 @@ function deleteInterval(id){
 
 function clearAllData(){
 	var request = $.ajax({
-		url: "http://localhost/~argenis/cloudbeds/interval/clear",
+		url: "http://cloudbeds.argenis.me/api/interval/clear",
 		method: 'POST',
 		data: {},
 		dataType: 'json'
